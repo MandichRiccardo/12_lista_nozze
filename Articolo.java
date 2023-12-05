@@ -1,33 +1,64 @@
+public class Articolo {
+    protected String nome;
+    protected String tipologia;
+    protected String colore;
+    protected String marca;
+    protected int quantita;
+    protected double costo;
 
-/**
- * Aggiungi qui una descrizione della classe Articolo
- * 
- * @author (il tuo nome) 
- * @version (un numero di versione o una data)
- */
-public class Articolo
-{
-    // variabili d'istanza - sostituisci l'esempio che segue con il tuo
-    private int x;
-
-    /**
-     * Costruttore degli oggetti di classe  Articolo
-     */
-    public Articolo()
-    {
-        // inizializza le variabili d'istanza
-        x = 0;
+    public Articolo(String nome, String tipologia, String colore, String marca, int quantita, double costo) {
+        this.nome = nome;
+        this.tipologia = tipologia;
+        this.colore = colore;
+        this.marca = marca;
+        this.quantita = quantita;
+        this.costo = costo;
     }
 
-    /**
-     * Un esempio di metodo - aggiungi i tuoi commenti
-     * 
-     * @param  y   un parametro d'esempio per un metodo
-     * @return     la somma di x e y
-     */
-    public int sampleMethod(int y)
-    {
-        // metti qui il tuo codice
-        return x + y;
+    public String getNome() {
+        return nome;
+    }
+
+    public String getTipologia() {
+        return tipologia;
+    }
+
+    public String getColore() {
+        return colore;
+    }
+
+    public String getMarca() {
+        return marca;
+    }
+
+    public int getQuantita() {
+        return quantita;
+    }
+    public void setQuantita(int quantita) {
+        this.quantita = quantita;
+    }
+
+    public double getCosto() {
+        return costo;
+    }
+
+    public String toString() {
+        String info = "";
+        info += "nome:\t" + nome + "\n";
+        info += "tipologia:\t" + tipologia + "\n";
+        info += "colore:\t" + colore + "\n";
+        info += "marca:\t" + marca + "\n";
+        info += "quantità:\t" + quantita + "\n";
+        info += "costo:\t" + costo + "\n";
+        return info;
+    }
+
+    public boolean equals(Articolo a) {
+        if(this.nome != a.nome) return false;
+        if(this.tipologia != a.tipologia) return false;
+        if(this.colore != a.colore) return false;
+        if(this.marca != a.marca) return false;
+        if(this.costo != a.costo) return false;
+        return true;
     }
 }
