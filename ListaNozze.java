@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class ListaNozze{
     protected Sposi coniugi;
     protected int maxArticoli;
@@ -38,18 +36,6 @@ public class ListaNozze{
         return info;
     }
 
-    public String aggiungiDesiderata(Articolo nuovoArticolo) {
-        if(articoliDesiderati[maxArticoli-1] != null) return "la lista nozze è piena";
-        int i=0;
-        while(articoliDesiderati[i]!=null){
-            if(articoliDesiderati[i].equals(nuovoArticolo)) return "questo articolo è già presente";
-            i++;
-        }
-        articoliDesiderati[i] = nuovoArticolo;
-        setPrezzoTot();
-        return "ho aggiunto questo articolo";
-    }
-
     public double getPrezzoTot() {
         return prezzoTot;
     }
@@ -78,5 +64,17 @@ public class ListaNozze{
         info += "prezzo totale:\t" + prezzoTot + "\n";
         info += getArticoliRegalati();
         return info;
+    }
+
+    public String aggiungiDesiderata(Articolo nuovoArticolo) {
+        if(articoliDesiderati[maxArticoli-1] != null) return "la lista nozze è piena";
+        int i=0;
+        while(articoliDesiderati[i]!=null){
+            if(articoliDesiderati[i].equals(nuovoArticolo)) return "questo articolo è già presente";
+            i++;
+        }
+        articoliDesiderati[i] = nuovoArticolo;
+        setPrezzoTot();
+        return "ho aggiunto questo articolo";
     }
 }
