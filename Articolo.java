@@ -14,6 +14,14 @@ public class Articolo {
         this.quantita = quantita;
         this.costo = costo;
     }
+    public Articolo() {
+        this.nome = Interazione.strput("come si chiama questo articolo?");
+        this.tipologia = Interazione.strput("di che tipologia è?");
+        this.colore = Interazione.strput("di che colore è?");
+        this.marca = Interazione.strput("di che marca è?");
+        this.quantita = Interazione.input("quanti ce ne sono in lista nozze?");
+        this.costo = Interazione.doubput("quanto costa il singolo articolo?");
+    }
 
     public String getNome() {
         return nome;
@@ -44,12 +52,12 @@ public class Articolo {
 
     public String toString() {
         String info = "";
-        info += "nome:\t" + nome + "\n";
-        info += "tipologia:\t" + tipologia + "\n";
-        info += "colore:\t" + colore + "\n";
-        info += "marca:\t" + marca + "\n";
-        info += "quantità:\t" + quantita + "\n";
-        info += "costo:\t" + costo + "\n";
+        info += "\tnome:\t" + nome + "\n";
+        info += "\ttipologia:\t" + tipologia + "\n";
+        info += "\tcolore:\t" + colore + "\n";
+        info += "\tmarca:\t" + marca + "\n";
+        info += "\tquantità:\t" + quantita + "\n";
+        info += "\tcosto:\t" + costo + "\n";
         return info;
     }
 

@@ -9,6 +9,11 @@ public class Sposi{
         this.sposa = sposa;
     }
 
+    public Sposi() {
+        this.sposo = Interazione.strput("come si chiama lo sposo?");
+        this.sposa = Interazione.strput("come si chiama la sposa?");
+    }
+
     public String getSposo() {
         return sposo;
     }

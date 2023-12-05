@@ -6,14 +6,42 @@ public class ListaNozze{
     protected double prezzoTot;
     protected Articolo[] articoliRegalati;
 
+    public ListaNozze(Sposi coniugi) {
+        this.coniugi = coniugi;
+        this.maxArticoli = Interazione.input("qual'è il numero massimo di articoli diversi presenti in lista nozze?");
+        this.negozio = Interazione.strput("in che negozio viene fatta questa lista nozze?");
+        this.articoliDesiderati = new Articolo[maxArticoli];
+        this.articoliRegalati = new Articolo[maxArticoli*2];
+    }
+
+    public ListaNozze(Sposi coniugi, Articolo[] articoliDesiderati) {
+        this.coniugi = coniugi;
+        this.maxArticoli = Interazione.input("qual'è il numero massimo di articoli diversi presenti in lista nozze?");
+        this.negozio = Interazione.strput("in che negozio viene fatta questa lista nozze?");
+        this.articoliDesiderati = new Articolo[maxArticoli];
+        for(int i=0;i<articoliDesiderati.length;i++){
+            aggiungiDesiderata(articoliDesiderati[i]);
+        }
+        this.articoliRegalati = new Articolo[maxArticoli*2];
+    }
+
+    public ListaNozze(Sposi coniugi, int maxArticoli, String negozio) {
+        this.coniugi = coniugi;
+        this.maxArticoli = maxArticoli;
+        this.negozio = negozio;
+        this.articoliDesiderati = new Articolo[maxArticoli];
+        this.articoliRegalati = new Articolo[maxArticoli*2];
+    }
+
     public ListaNozze(Sposi coniugi, int maxArticoli, String negozio, Articolo[] articoliDesiderati) {
         this.coniugi = coniugi;
         this.maxArticoli = maxArticoli;
         this.negozio = negozio;
         this.articoliDesiderati = new Articolo[maxArticoli];
         for(int i=0;i<articoliDesiderati.length;i++){
-            if(articoliDesiderati[i] != null) this.articoliDesiderati[i] = articoliDesiderati[i];
+            aggiungiDesiderata(articoliDesiderati[i]);
         }
+        this.articoliRegalati = new Articolo[maxArticoli*2];
     }
 
     public String getConiugi() {
@@ -31,7 +59,7 @@ public class ListaNozze{
     public String getArticoliDesiderati() {
         String info = "";
         for(int i=0;i<articoliDesiderati.length;i++){
-            info = info.concat(articoliDesiderati[i].toString());
+            info = info.concat(i + ")\t" + articoliDesiderati[i].toString());
         }
         return info;
     }
