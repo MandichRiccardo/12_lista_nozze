@@ -11,7 +11,7 @@ public class ListaNozze{
         this.maxArticoli = Interazione.input("qual'è il numero massimo di articoli diversi presenti in lista nozze?");
         this.negozio = Interazione.strput("in che negozio viene fatta questa lista nozze?");
         this.articoliDesiderati = new Articolo[maxArticoli];
-        this.articoliRegalati = new Articolo[maxArticoli*2];
+        this.articoliRegalati = new Articolo[maxArticoli];
     }
 
     public ListaNozze(Sposi coniugi, Articolo[] articoliDesiderati) {
@@ -22,7 +22,7 @@ public class ListaNozze{
         for(int i=0;i<articoliDesiderati.length;i++){
             aggiungiDesiderata(articoliDesiderati[i]);
         }
-        this.articoliRegalati = new Articolo[maxArticoli*2];
+        this.articoliRegalati = new Articolo[maxArticoli];
     }
 
     public ListaNozze(Sposi coniugi, int maxArticoli, String negozio) {
@@ -30,7 +30,7 @@ public class ListaNozze{
         this.maxArticoli = maxArticoli;
         this.negozio = negozio;
         this.articoliDesiderati = new Articolo[maxArticoli];
-        this.articoliRegalati = new Articolo[maxArticoli*2];
+        this.articoliRegalati = new Articolo[maxArticoli];
     }
 
     public ListaNozze(Sposi coniugi, int maxArticoli, String negozio, Articolo[] articoliDesiderati) {
@@ -41,7 +41,7 @@ public class ListaNozze{
         for(int i=0;i<articoliDesiderati.length;i++){
             aggiungiDesiderata(articoliDesiderati[i]);
         }
-        this.articoliRegalati = new Articolo[maxArticoli*2];
+        this.articoliRegalati = new Articolo[maxArticoli];
     }
 
     public String getConiugi() {
