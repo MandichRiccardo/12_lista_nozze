@@ -40,10 +40,10 @@ public class Sposi{
 
     public String toString() {
         String info = "";
-        info += "sposo:\t" + sposo + "\n";
-        info += "sposa:\t" + sposa + "\n";
-        info += "data del matrimonio:\t" + dataMatrimonio + "\n";
-        info += "luogo del matrimonio:\t" + luogoMatrimonio + "\n";
+        info += "\tsposo:\t" + sposo + "\n";
+        info += "\tsposa:\t" + sposa + "\n";
+        info += "\tdata del matrimonio:\t" + dataMatrimonio + "\n";
+        info += "\tluogo del matrimonio:\t" + luogoMatrimonio + "\n";
         return info;
     }
 }

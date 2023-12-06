@@ -59,7 +59,7 @@ public class ListaNozze{
     public String getArticoliDesiderati() {
         String info = "";
         for(int i=0;i<articoliDesiderati.length;i++){
-            info = info.concat(i + ")\t" + articoliDesiderati[i].toString());
+            if(articoliDesiderati[i] != null) info = info.concat(i + ")\t" + articoliDesiderati[i].toString());
         }
         return info;
     }
@@ -78,7 +78,7 @@ public class ListaNozze{
     public String getArticoliRegalati() {
         String info = "";
         for(int i=0;i<articoliRegalati.length;i++){
-            info = info.concat(articoliRegalati[i].toString());
+            if(articoliRegalati[i] != null) info = info.concat(articoliRegalati[i].toString());
         }
         return info;
     }
@@ -102,7 +102,7 @@ public class ListaNozze{
 
     public String toString() {
         String info = "";
-        info += "coniugi:\t" + coniugi + "\n";
+        info += "coniugi:\n" + coniugi + "\n";
         info += "articoli massimi:\t" + maxArticoli + "\n";
         info += "negozio:\t" + negozio + "\n";
         info += getArticoliDesiderati();
