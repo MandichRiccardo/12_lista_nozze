@@ -3,7 +3,6 @@ public class Articolo {
     protected String tipologia;
     protected String colore;
     protected String marca;
-    protected int quantita;
     protected double costo;
 
     public Articolo(String nome, String tipologia, String colore, String marca, int quantita, double costo) {
@@ -11,7 +10,6 @@ public class Articolo {
         this.tipologia = tipologia;
         this.colore = colore;
         this.marca = marca;
-        this.quantita = quantita;
         this.costo = costo;
     }
     public Articolo() {
@@ -19,7 +17,6 @@ public class Articolo {
         this.tipologia = Interazione.strput("di che tipologia è?");
         this.colore = Interazione.strput("di che colore è?");
         this.marca = Interazione.strput("di che marca è?");
-        this.quantita = Interazione.input("quanti ce ne sono in lista nozze?");
         this.costo = Interazione.doubput("quanto costa il singolo articolo?");
     }
 
@@ -39,13 +36,6 @@ public class Articolo {
         return marca;
     }
 
-    public int getQuantita() {
-        return quantita;
-    }
-    public void setQuantita(int quantita) {
-        this.quantita = quantita;
-    }
-
     public double getCosto() {
         return costo;
     }
@@ -56,7 +46,6 @@ public class Articolo {
         info += "\ttipologia:\t" + tipologia + "\n";
         info += "\tcolore:\t" + colore + "\n";
         info += "\tmarca:\t" + marca + "\n";
-        info += "\tquantità:\t" + quantita + "\n";
         info += "\tcosto:\t" + costo + "\n";
         return info;
     }

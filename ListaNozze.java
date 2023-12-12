@@ -133,13 +133,18 @@ public class ListaNozze{
     public void compraRegalo(){
         int i=Interazione.input(getArticoliDesiderati() + "\nquesti sono gli articoli presenti nella lista nozze di " + coniugi.getSposo() + " e " + coniugi.getSposa() + ", inserisci il numero di fianco all'articolo che gli vuoi regalare");
         int quantita = 0;
-        if(articoliDesiderati[i].quantita != 1){
-            while(quantita<1||quantita>articoliDesiderati[i].quantita) quantita = Interazione.input("quanti di questo articolo vuoi regalargli?\t(max " + articoliDesiderati[i].quantita + " e min 1)");
-        }
-        articoliDesiderati[i].quantita -= quantita;
-        setArticoliRegalati(articoliDesiderati[i], quantita);
-        if(articoliDesiderati[i].quantita == 0){
-            rimuoviArticoloDesiderato(i);
+        if(articoliDesiderati[i] instanceof Stoviglie) {
+            if (articoliDesiderati[i].getQuantita() != 1) {
+                while (quantita < 1 || quantita > articoliDesiderati[i].getQuantita())
+                    quantita = Interazione.input("quanti di questo articolo vuoi regalargli?\t(max " + articoliDesiderati[i].getQuantita() + " e min 1)");
+            }
+            articoliDesiderati[i].getQuantita() -= quantita;
+            setArticoliRegalati(articoliDesiderati[i], quantita);
+            if (articoliDesiderati[i].getQuantita() == 0) {
+                rimuoviArticoloDesiderato(i);
+            }
+        }else{
+            setArticoliRegalati(articoliDesiderati[i], 1);
         }
         setPrezzoTot();
     }
