@@ -50,6 +50,10 @@ public class Articolo {
         return info;
     }
 
+    public int getQuantita(){
+        return 1;
+    }
+
     public boolean equals(Articolo a) {
         if(this.nome != a.nome) return false;
         if(this.tipologia != a.tipologia) return false;

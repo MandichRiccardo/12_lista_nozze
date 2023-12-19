@@ -138,7 +138,7 @@ public class ListaNozze{
                 while (quantita < 1 || quantita > articoliDesiderati[i].getQuantita())
                     quantita = Interazione.input("quanti di questo articolo vuoi regalargli?\t(max " + articoliDesiderati[i].getQuantita() + " e min 1)");
             }
-            articoliDesiderati[i].getQuantita() -= quantita;
+            ((Stoviglie) articoliDesiderati[i]).quantita -= quantita;
             setArticoliRegalati(articoliDesiderati[i], quantita);
             if (articoliDesiderati[i].getQuantita() == 0) {
                 rimuoviArticoloDesiderato(i);
