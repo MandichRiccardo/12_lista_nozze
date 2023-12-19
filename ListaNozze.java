@@ -111,6 +111,15 @@ public class ListaNozze{
         return info;
     }
 
+    public String aggiungiDesiderata() {
+        Articolo nuovoArticolo;
+        switch (Interazione.strput("che tipo di articolo vuoi inserire?\t(per inserire un elettrodomestico digitare \"Elettrodomestico\" per delle posate digitare \"Stoviglie\" per altri tipi digitare \"Articolo\")")) {
+            case "Elettrodomestico" -> nuovoArticolo = new Elettrodomestico();
+            case "Stoviglie" -> nuovoArticolo = new Stoviglie();
+            default -> nuovoArticolo = new Articolo();
+        }
+        return aggiungiDesiderata(nuovoArticolo);
+    }
     public String aggiungiDesiderata(Articolo nuovoArticolo) {
         if(articoliDesiderati[maxArticoli-1] != null) return "la lista nozze è piena";
         int i=0;

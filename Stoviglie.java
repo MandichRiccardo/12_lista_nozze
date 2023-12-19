@@ -10,7 +10,7 @@ public class Stoviglie extends Articolo{
         this.costoTot = costoTot;
     }
 
-    public Stoviglie(String materiale) {
+    public Stoviglie() {
         super();
         this.materiale = Interazione.strput("di che materiale è fatto questa stoviglia?");
         this.quantita = Interazione.input("quanti ce ne sono in lista nozze?");
