@@ -1,0 +1,9 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Test.main()" type="Application" factoryName="Application">
+    <option name="MAIN_CLASS_NAME" value="Test" />
+    <module name="12_lista_nozze" />
+    <method v="2">
+      <option name="Make" enabled="true" />
+    </method>
+  </configuration>
+</component>
