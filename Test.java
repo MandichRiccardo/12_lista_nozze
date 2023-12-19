@@ -1,7 +1,6 @@
 public class Test{
     public static void main(String[] args) {
-        Sposi coniugi = new Sposi();
-        ListaNozze l1 = new ListaNozze(coniugi);
+        ListaNozze l1 = new ListaNozze(new Sposi());
         boolean ListaAttiva = true;
         do{
             Interazione.output(l1.toString());
@@ -11,5 +10,6 @@ public class Test{
                 case 3 -> ListaAttiva = false;
             }
         }while(ListaAttiva);
+        Interazione.output(l1+"");
     }
 }
